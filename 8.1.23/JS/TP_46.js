@@ -10,7 +10,6 @@ while (people != 0) {
     eyes = confirm("Avez vous les yeux bleu ? ");
     if (fName === "david" && eyes === true) {
         david++;
-        console.log(david);
     }
 }
 alert("There are " + david + " Davids with blue eyes in the room");
