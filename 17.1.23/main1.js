@@ -1,6 +1,6 @@
 function voyeles(str) {
     var Voyelesltr = "aeiou";
-    var Consonnesltr = "bcdfghjklmnpqrstvwxzeiou";
+    var Consonnesltr = "bcdfghjklmnpqrstvwxz";
     var ArrayVoyeles = [];
     var ArrayConsomme = [];
 
