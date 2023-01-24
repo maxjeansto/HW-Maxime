@@ -1,7 +1,7 @@
 var appDiv = document.getElementById("main");
 var users = [{ "fullName": "maxime", "email": "maxime@gmail.com", "pass": "password123" },
 { "fullName": "meir", "email": "meir@gmail.com", "pass": "password456" },
-{ "fullName": "jimmy", "email": "johndoe@gmail.com", "pass": "password789" }]
+{ "fullName": "jimmy", "email": "jimmy@gmail.com", "pass": "password789" }]
 
 
 init()
