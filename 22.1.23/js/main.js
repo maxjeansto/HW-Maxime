@@ -83,7 +83,7 @@ function init() {
     function login() {
         var Valid = false;
         for (var i = 0; i < users.length; i++) {
-            if (emailInput.value.toLowerCase() === users[i].email && passInput.value === users[i].pass && fnameInput.value === users[i].fullName) {
+            if (emailInput.value.toLowerCase() === users[i].email && passInput.value === users[i].pass && fnameInput.value.toLowerCase() === users[i].fullName) {
                 Valid = true;
                 break;
             }
