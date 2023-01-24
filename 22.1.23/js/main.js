@@ -1,5 +1,7 @@
 var appDiv = document.getElementById("main");
-const user = { fullName: "Maxime Saada", email: "saadamaxime@gmail.com", pass: "topsecret1251" };
+var users = [{ "fullName": "maxime", "email": "maxime@gmail.com", "pass": "password123" },
+{ "fullName": "meir", "email": "meir@gmail.com", "pass": "password456" },
+{ "fullName": "jimmy", "email": "johndoe@gmail.com", "pass": "password789" }]
 
 
 init()
@@ -41,12 +43,13 @@ function init() {
     btnDiv.append(btn);
     loginSection.append(btnDiv);
     appDiv.append(loginSection);
+    btn.style.display = "none";
+
 
     emailInput.addEventListener("input", checkEmail);
     fnameInput.addEventListener("input", checkName);
     passInput.addEventListener("input", checkPass);
     btn.addEventListener("click", login);
-    btn.style.display = "none";
 
 
     function checkEmail() {
@@ -59,7 +62,7 @@ function init() {
     }
 
     function checkName() {
-        if (fnameInput.value.length > 5) {
+        if (fnameInput.value.length > 2) {
             passDiv.style.display = "block";
         } else {
             passDiv.style.display = "none";
@@ -68,7 +71,7 @@ function init() {
     }
 
     function checkPass() {
-        if (fnameInput.value === user.fullName) {
+        if (passInput.value.length > 8) {
             btn.style.display = "block";
         } else {
             btn.style.display = "none";
@@ -78,16 +81,23 @@ function init() {
 
 
     function login() {
-        if (emailInput.value.toLowerCase().replaceAll(" ", "") === user.email && passInput.value === user.pass && fnameInput.value === user.fullName) {
-            goToDashboard();
+        var Valid = false;
+        for (var i = 0; i < users.length; i++) {
+            if (emailInput.value.toLowerCase() === users[i].email && passInput.value === users[i].pass && fnameInput.value === users[i].fullName) {
+                Valid = true;
+                break;
+            }
+        }
+        if (Valid) {
+            goToDashboard(users[i].fullName);
         } else {
             alert("Wrong Credential");
         }
     }
-    function goToDashboard() {
-        var section = document.createElement("section")
+    function goToDashboard(name) {
+        var section = document.createElement("section");
         var h1 = document.createElement("h1");
-        h1.innerText = `Welcom, ${user.fullName}`;
+        h1.innerText = `Welcome, ${name}`;
         section.append(h1);
         loginSection.remove();
         appDiv.append(section);
