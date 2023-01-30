@@ -46,20 +46,22 @@ function createForm() {
     //affichage des produits deja presents
     var container = document.createElement("div");
     container.className = "container";
-    for (const product of Products) {
-        container.innerHTML += `
-          <div class="product">
-            <img src="${product.img}"/>
-            <h3>${product.title}</h3>
-            <p>
-              ${product.desc}
-            </p>
-            <div class="price">${product.price}$</div>
-            <button>Acheter</button>
-          </div>
+    Products.forEach(function(obj) {
+        var productDiv = document.createElement("div");
+        productDiv.className = "product";
+        productDiv.innerHTML = `
+          <img src="${obj.img}"/>
+          <h3>${obj.title}</h3>
+          <p>
+            ${obj.desc}
+          </p>
+          <div class="price">${obj.price}$</div>
+          <button>Acheter</button>
         `;
-        document.body.appendChild(container);
-    }
+        container.appendChild(productDiv);
+    });
+    document.body.appendChild(container);
+
 
     // Creation du Formulaire
     const formContainer = document.createElement("div");
