@@ -6,6 +6,12 @@ const Products = [
     { title: "Imac M1", desc: "Toute la puissance du M1 dans un Imac", price: 1590, img: "./img/MGPC3HB-A_12052021115420.jpeg" },
     { title: "Iphone 14 pro", desc: "Pro.Plus ultra", price: 1479, img: "./img/iphone.png" },
     { title: "Mac Mini", desc: "Musclé avec un grand V", price: 699, img: "./img/macmini.jpeg" }
+
+    // rajouter se produit manuellement dans le formulaire pour tester la page 
+        // Title  = Airpods Pro
+        // Price = 189 
+        // image url = ./img/airpods.jpeg
+        // Description = ce que vous voulez 
 ];
 
 
@@ -30,6 +36,7 @@ class myButton {
     }
 }
 
+
 class myTxt {
     constructor(placeholder) {
         this.txt = document.createElement("textarea");
@@ -41,12 +48,21 @@ class myTxt {
 
 createForm();
 
+
 function createForm() {
 
+    function buyNow() {
+        alert("Article dans le panier");
+    }
+    
     //affichage des produits deja presents
     var container = document.createElement("div");
     container.className = "container";
+   
     Products.forEach(function(obj) {
+        const button2 = document.createElement("button");
+        button2.textContent = "Acheter";
+        button2.addEventListener("click", buyNow);
         var product = document.createElement("div");
         product.className = "product";
         product.innerHTML = `
@@ -56,12 +72,15 @@ function createForm() {
             ${obj.desc}
           </p>
           <div class="price">${obj.price}$</div>
-          <button>Acheter</button>
+          
         `;
+        
+        product.appendChild(button2);
         container.appendChild(product);
     });
     document.body.appendChild(container);
 
+    
 
     // Creation du Formulaire
     const formContainer = document.createElement("div");
@@ -89,6 +108,10 @@ function createForm() {
         Products.push(obj);
         form.reset();
 
+
+        const button2 = document.createElement("button");
+        button2.textContent = "Acheter";
+        button2.addEventListener("click", buyNow);
         const product = document.createElement("div");
         product.className = "product";
         product.innerHTML = `
@@ -98,8 +121,9 @@ function createForm() {
             ${obj.desc}
           </p>
           <div class="price">${obj.price}$</div>
-          <button>Acheter</button>
         `;
+       
+        product.appendChild(button2);
         container.appendChild(product);
     }
 }
