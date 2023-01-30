@@ -2,10 +2,10 @@ const Products = [
 
     // exemple de produits 
 
-    // { title: "Macbook pro", desc: "Le Dernier Macbook Pro", price: 2950, img: "./img/macbook.jpeg" },
-    // { title: "Imac M1", desc: "Toute la puissance du M1 dans un Imac", price: 1590, img: "./img/MGPC3HB-A_12052021115420.jpeg" },
-    // { title: "Iphone 14 pro", desc: "Pro.Plus ultra", price: 1479, img: "./img/iphone.png" },
-    // { title: "Mac Mini", desc: "Musclé avec un grand V", price: 699, img: "./img/macmini.jpeg" }
+    { title: "Macbook pro", desc: "Le Dernier Macbook Pro", price: 2950, img: "./img/macbook.jpeg" },
+    { title: "Imac M1", desc: "Toute la puissance du M1 dans un Imac", price: 1590, img: "./img/MGPC3HB-A_12052021115420.jpeg" },
+    { title: "Iphone 14 pro", desc: "Pro.Plus ultra", price: 1479, img: "./img/iphone.png" },
+    { title: "Mac Mini", desc: "Musclé avec un grand V", price: 699, img: "./img/macmini.jpeg" }
 ];
 
 
@@ -38,11 +38,30 @@ class myTxt {
 }
 
 
-// Creation du Formulaire
+
 createForm();
 
 function createForm() {
 
+    //affichage des produits deja presents
+    var container = document.createElement("div");
+    container.className = "container";
+    for (const product of Products) {
+        container.innerHTML += `
+          <div class="product">
+            <img src="${product.img}"/>
+            <h3>${product.title}</h3>
+            <p>
+              ${product.desc}
+            </p>
+            <div class="price">${product.price}$</div>
+            <button>Acheter</button>
+          </div>
+        `;
+        document.body.appendChild(container);
+    }
+
+    // Creation du Formulaire
     const formContainer = document.createElement("div");
     formContainer.className = "form-container"
     const form = document.createElement("form");
@@ -56,9 +75,8 @@ function createForm() {
     formContainer.appendChild(form);
     document.body.appendChild(formContainer);
 
-    // Creation du produit apres submit dans le formulaire
-    var container = document.createElement("div");
-    container.className = "container";
+    // Ajout du produit apres submit dans le formulaire
+
     function addProduct(event) {
         event.preventDefault();
         var obj = {};
@@ -67,21 +85,20 @@ function createForm() {
         obj.price = price.input.value;
         obj.img = img.input.value;
         Products.push(obj);
-        container.innerHTML += `
-        <div class="product">
-            <img src="${obj.img}"/>
-            <h3>${obj.title}</h3>
-            <p>
-              ${obj.desc}
-            </p>
-            <div class="price">${obj.price}$</div>
-            <button>Acheter</button>
-          </div>
-        `;
-
-        document.body.appendChild(container);
-        // Je vide le formulaire 
         form.reset();
+
+        const product = document.createElement("div");
+        product.className = "product";
+        product.innerHTML = `
+          <img src="${obj.img}"/>
+          <h3>${obj.title}</h3>
+          <p>
+            ${obj.desc}
+          </p>
+          <div class="price">${obj.price}$</div>
+          <button>Acheter</button>
+        `;
+        container.appendChild(product);
     }
 }
 
