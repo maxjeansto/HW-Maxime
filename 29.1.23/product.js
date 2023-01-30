@@ -47,9 +47,9 @@ function createForm() {
     var container = document.createElement("div");
     container.className = "container";
     Products.forEach(function(obj) {
-        var productDiv = document.createElement("div");
-        productDiv.className = "product";
-        productDiv.innerHTML = `
+        var product = document.createElement("div");
+        product.className = "product";
+        product.innerHTML = `
           <img src="${obj.img}"/>
           <h3>${obj.title}</h3>
           <p>
@@ -58,7 +58,7 @@ function createForm() {
           <div class="price">${obj.price}$</div>
           <button>Acheter</button>
         `;
-        container.appendChild(productDiv);
+        container.appendChild(product);
     });
     document.body.appendChild(container);
 
