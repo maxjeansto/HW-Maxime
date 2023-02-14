@@ -35,7 +35,7 @@ for (const key of keys) {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(delay, 3000);
         if (Code.length === 4) {
-            setTimeout((3000);() => {
+            setTimeout(() => {
                 Code === targetCode ? (() => {console.log(targetCode); alert("Success"); resetAll();})() :
                     (attempts === 0 ? (() => {alert("La police arrive!"); resetAll();})() :
                         (() => {alert(`Code Incorrect. Vous avez encore ${attempts} essaies.`); reset(); attempts--; })());
