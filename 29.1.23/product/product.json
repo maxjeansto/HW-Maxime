@@ -1,0 +1,32 @@
+[
+      {
+        "title": "Macbook pro",
+        "desc": "Le Dernier Macbook Pro",
+        "price": 2950,
+        "img": "./img/macbook.jpeg"
+      },
+      {
+        "title": "Imac M1",
+        "desc": "Toute la puissance du M1 dans un Imac",
+        "price": 1590,
+        "img": "./img/MGPC3HB-A_12052021115420.jpeg"
+      },
+      {
+        "title": "Iphone 14 pro",
+        "desc": "Pro.Plus ultra",
+        "price": 1479,
+        "img": "./img/iphone.png"
+      },
+      {
+        "title": "Mac Mini",
+        "desc": "Musclé avec un grand V",
+        "price": 699,
+        "img": "./img/macmini.jpeg"
+      },
+      {
+        "title": "Airpods Pro",
+        "desc": "ce que vous voulez",
+        "price": 189,
+        "img": "./img/airpods.jpeg"
+      }
+    ]
