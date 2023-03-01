@@ -1,0 +1,26 @@
+[{
+    "part": "engine",
+    "url": "https://s3-eu-west-1.amazonaws.com/dev.appdrag.com/tp-28-02-a631a1/car_parts/carengine.png"
+},
+
+{
+    "part": "tire",
+    "url": "https://s3-eu-west-1.amazonaws.com/dev.appdrag.com/tp-28-02-a631a1/car_parts/cartire.png"
+},
+
+{
+    "part": "chassis",
+    "url": "https://s3-eu-west-1.amazonaws.com/dev.appdrag.com/tp-28-02-a631a1/car_parts/carchassis.png"
+},
+
+{
+    "part": "seat",
+    "url": "https://s3-eu-west-1.amazonaws.com/dev.appdrag.com/tp-28-02-a631a1/car_parts/carseat.png"
+},
+
+{
+    "part": "car",
+    "url": "https://s3-eu-west-1.amazonaws.com/dev.appdrag.com/tp-28-02-a631a1/car_parts/car.png"
+}
+
+]

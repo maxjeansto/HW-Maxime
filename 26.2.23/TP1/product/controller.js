@@ -3,12 +3,11 @@ import * as Model from "./model.js";
 
 //on initialise le programme
 export function init() {
-   
-    //on initialise  le formulaure
-    View.passwordForm(function (event) {
+  //on initialise  le formulaure
+  View.passwordForm(function (event) {
     event.preventDefault();
 
-    // Submit du mot de passe 
+    // Submit du mot de passe
     Model.getPassword().then((answer) => {
       let passwords = answer;
       let userInput = View.pass.input.value;
