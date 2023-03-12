@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Recherche de films</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Recherche de films</h1>
+    <form>
+      <input type="text" id="search-input" placeholder="Entrez un titre de film">
+      <button type="submit" id="rechercher-btn">Rechercher</button>
+    </form>
+  </header>
+  <main>
+    <div id="header_resultat"></div>
+    <div id="movie-list"></div>
+    <div id="modal" class="modal">
+      <div id="modal-content" class="modal-content">
+        <img id="modal-image" class="modal-image" src="" alt="Affiche">
+        <p id="modal-description" class="modal-description"></p>
+        <span class="close">&times;</span>
+      </div>
+    </div>
+    
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
